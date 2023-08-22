@@ -1,6 +1,8 @@
 package generator;
 
 
+import io.qameta.allure.Step;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +24,7 @@ public class CatalogsGenerator {
 
 
 
-
-
-
+    @Step("Создан заготовленный список для сравнения каталога 'Красота и спорт'.")
     public static List<String> getCollectedBeautyAndSportList() {
         collectedBeautyAndSportList.add("Велосипеды и самокаты");
         collectedBeautyAndSportList.add("Гироскутеры");
@@ -76,6 +76,7 @@ public class CatalogsGenerator {
     }
 
     public static List<String> getCollectedGyroscootersList() {
+        collectedGyroscootersList.add("Электроскутеры");
         collectedGyroscootersList.add("Гироциклы");
         return collectedGyroscootersList;
     }
@@ -201,7 +202,7 @@ public class CatalogsGenerator {
         collectedHobbyList.add("Радиоуправляемые авиамодели");
         collectedHobbyList.add("Телескопы");
         collectedHobbyList.add("Картины по номерам, алмазная мозаика");
-        collectedHobbyList.add("Спицы, крючки, пряжа, аксессуары и наборы для вязания\n");
+        collectedHobbyList.add("Спицы, крючки, пряжа, аксессуары и наборы для вязания");
         collectedHobbyList.add("Товары для вышивания");
         collectedHobbyList.add("Радиоуправляемые судомодели");
         collectedHobbyList.add("Радиоуправляемые автомодели");
@@ -232,5 +233,37 @@ public class CatalogsGenerator {
         collectedHygieneAndCareList.add("Ватные диски, палочки");
         collectedHygieneAndCareList.add("Подгузники для взрослых, трусики");
         return collectedHygieneAndCareList;
+    }
+
+    @Step("Создан заготовленный список для сравнения подкаталога '{name}'.")
+    public static List<String> getCollectedListByName(String name) {
+        switch (name) {
+            case "Велосипеды и самокаты":
+                return CatalogsGenerator.getCollectedBicyclesAndScootersList();
+            case "Гироскутеры":
+                return CatalogsGenerator.getCollectedGyroscootersList();
+            case "Здоровье":
+                return CatalogsGenerator.getCollectedHealthList();
+            case "Зимние виды спорта":
+                return CatalogsGenerator.getCollectedWinterSportsList();
+            case "Косметика":
+                return CatalogsGenerator.getCollectedCosmeticsList();
+            case "Летние виды спорта":
+                return CatalogsGenerator.getCollectedSummerSportsList();
+            case "Одежда, обувь, аксессуары":
+                return CatalogsGenerator.getCollectedClothesShoesAccessoriesList();
+            case "Рыбалка":
+                return CatalogsGenerator.getCollectedFishingList();
+            case "Тренажеры и инвентарь":
+                return CatalogsGenerator.getCollectedSimulatorsAndEquipmentList();
+            case "Туризм и активный отдых":
+                return CatalogsGenerator.getCollectedTourismAndActiveRecreationList();
+            case "Хобби":
+                return CatalogsGenerator.getCollectedHobbyList();
+            case "Гигиена и уход":
+                return CatalogsGenerator.getCollectedHygieneAndCareList();
+            default:
+                return new ArrayList<>();
+        }
     }
 }

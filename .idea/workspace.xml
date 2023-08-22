@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a2a92b-45cd-41be-9d79-cff29f702b27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/generator/CatalogsGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/generator/CatalogsGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/BeautyAndSport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/MenuNavigationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/property/PropertyHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/property/PropertiesHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestsBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestsBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -84,7 +85,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BeautyAndSportTests.testFishingSubcatalog" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="BeautyAndSportTests.testBeautyAndSportCatalog" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="by" />
       <extension name="coverage">
         <pattern>
@@ -94,7 +95,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BeautyAndSportTests" />
-      <option name="METHOD_NAME" value="testFishingSubcatalog" />
+      <option name="METHOD_NAME" value="testBeautyAndSportCatalog" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -102,7 +103,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BeautyAndSportTests.testHobbySubcatalog" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="BeautyAndSportTests.testBeautyAndSportSubcatalogs" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="by" />
       <extension name="coverage">
         <pattern>
@@ -112,7 +113,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BeautyAndSportTests" />
-      <option name="METHOD_NAME" value="testHobbySubcatalog" />
+      <option name="METHOD_NAME" value="testBeautyAndSportSubcatalogs" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -120,7 +121,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BeautyAndSportTests.testHygieneAndCareSubcatalog" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="BeautyAndSportTests.testSimulatorsAndEquipmentSubcatalog" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="by" />
       <extension name="coverage">
         <pattern>
@@ -130,7 +131,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BeautyAndSportTests" />
-      <option name="METHOD_NAME" value="testHygieneAndCareSubcatalog" />
+      <option name="METHOD_NAME" value="testSimulatorsAndEquipmentSubcatalog" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -138,7 +139,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BeautyAndSportTests.testTourismAndActiveRecreationSubcatalog" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="by" />
       <extension name="coverage">
         <pattern>
@@ -147,9 +148,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BeautyAndSportTests" />
-      <option name="METHOD_NAME" value="testTourismAndActiveRecreationSubcatalog" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="tests.TestTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -159,10 +159,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.BeautyAndSportTests" />
-        <item itemvalue="TestNG.BeautyAndSportTests.testHygieneAndCareSubcatalog" />
-        <item itemvalue="TestNG.BeautyAndSportTests.testHobbySubcatalog" />
-        <item itemvalue="TestNG.BeautyAndSportTests.testTourismAndActiveRecreationSubcatalog" />
-        <item itemvalue="TestNG.BeautyAndSportTests.testFishingSubcatalog" />
+        <item itemvalue="TestNG.BeautyAndSportTests.testBeautyAndSportCatalog" />
+        <item itemvalue="TestNG.BeautyAndSportTests.testBeautyAndSportSubcatalogs" />
+        <item itemvalue="TestNG.BeautyAndSportTests.testSimulatorsAndEquipmentSubcatalog" />
+        <item itemvalue="TestNG.TestTest" />
       </list>
     </recent_temporary>
   </component>
@@ -176,5 +176,16 @@
       <updated>1692530855170</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

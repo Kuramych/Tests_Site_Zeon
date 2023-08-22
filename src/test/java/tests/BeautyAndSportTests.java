@@ -1,16 +1,22 @@
 package tests;
 
 import generator.CatalogsGenerator;
-import org.assertj.core.api.Assertions;
+import io.qameta.allure.Feature;
+import io.qameta.allure.testng.AllureTestNg;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pageObjects.BeautyAndSport;
+import pageObjects.MenuNavigationPage;
 import pageObjects.HomePage;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
-
+@Listeners(AllureTestNg.class)
+@Feature("Тестирование сайта Zeon.by1")
 public class BeautyAndSportTests extends TestsBase{
 
     List<String> listBeautyAndSportFromSite = new ArrayList<>();
@@ -18,129 +24,25 @@ public class BeautyAndSportTests extends TestsBase{
     List<String> subcatalogListFromSite = new ArrayList<>();
 
 
-    @Test
+    @DataProvider(name="beautyAndSportList")
+    public Iterator<String> beautyAndSportList1() {
+        return listBeautyAndSportFromSite.iterator();
+    }
+
+
+    @Test(description = "Проверка раздела 'Красота и спорт' на содержание.")
     public void testBeautyAndSportCatalog() {
         HomePage.initBeautyAndSport();
-        listBeautyAndSportFromSite = BeautyAndSport.getBeautyAndSportCatalog();
+        listBeautyAndSportFromSite = MenuNavigationPage.getBeautyAndSportCatalog();
         collectedList = CatalogsGenerator.getCollectedBeautyAndSportList();
-        for (int i = 0; i < listBeautyAndSportFromSite.size(); i++) {
-            Assertions.assertThat(listBeautyAndSportFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
+        Assert.assertEquals(listBeautyAndSportFromSite, collectedList);
     }
 
-    @Test
-    public void testSimulatorsAndEquipmentSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Тренажеры и инвентарь");
-        collectedList = CatalogsGenerator.getCollectedSimulatorsAndEquipmentList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
+    @Test(dataProvider = "beautyAndSportList", description = "Проверка подкаталога, входящий в раздел 'Красота и спорт' на содержание.")
+    public void testBeautyAndSportSubcatalogs(String name) {
+        subcatalogListFromSite = MenuNavigationPage.getbeautyAndSportSubcatalog(name.trim());
+        collectedList = CatalogsGenerator.getCollectedListByName(name);
+        Assert.assertEquals(subcatalogListFromSite, collectedList);
     }
-
-    @Test
-    public void testBicyclesAndScootersSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Велосипеды и самокаты");
-        collectedList = CatalogsGenerator.getCollectedBicyclesAndScootersList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testGyroscootersSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Гироскутеры");
-        collectedList = CatalogsGenerator.getCollectedGyroscootersList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testHealthSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Здоровье");
-        collectedList = CatalogsGenerator.getCollectedHealthList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testWinterSportsSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Зимние виды спорта");
-        collectedList = CatalogsGenerator.getCollectedWinterSportsList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testCosmeticsSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Косметика");
-        collectedList = CatalogsGenerator.getCollectedCosmeticsList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testSummerSportsSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Летние виды спорта");
-        collectedList = CatalogsGenerator.getCollectedSummerSportsList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testClothesShoesAccessoriesSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Одежда, обувь, аксессуары");
-        collectedList = CatalogsGenerator.getCollectedClothesShoesAccessoriesList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testFishingSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Рыбалка");
-        collectedList = CatalogsGenerator.getCollectedFishingList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testTourismAndActiveRecreationSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Туризм и активный отдых");
-        collectedList = CatalogsGenerator.getCollectedTourismAndActiveRecreationList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testHobbySubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Хобби");
-        collectedList = CatalogsGenerator.getCollectedHobbyList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-    @Test
-    public void testHygieneAndCareSubcatalog() {
-        subcatalogListFromSite = BeautyAndSport.getbeautyAndSportSubcatalog("Гигиена и уход");
-        collectedList = CatalogsGenerator.getCollectedHygieneAndCareList();
-        for (int i = 0; i < subcatalogListFromSite.size(); i++) {
-            Assertions.assertThat(subcatalogListFromSite.get(i)).isEqualToIgnoringWhitespace(collectedList.get(i));
-        }
-    }
-
-
-
-
-
-
-
 
 }
