@@ -24,7 +24,6 @@ public class CatalogsGenerator {
 
 
 
-    @Step("Создан заготовленный список для сравнения каталога 'Красота и спорт'.")
     public static List<String> getCollectedBeautyAndSportList() {
         collectedBeautyAndSportList.add("Велосипеды и самокаты");
         collectedBeautyAndSportList.add("Гироскутеры");
@@ -96,7 +95,6 @@ public class CatalogsGenerator {
         collectedHealthList.add("Массажные щетки и мочалки");
         collectedHealthList.add("Рециркуляторы, бактерицидные светильники");
         collectedHealthList.add("Прочее");
-        collectedHealthList.add("Глюкометры");
         collectedHealthList.add("Приборы для физиотерапии");
         collectedHealthList.add("Пульсометры");
         return collectedHealthList;
@@ -105,6 +103,7 @@ public class CatalogsGenerator {
     public static List<String> getCollectedWinterSportsList() {
         collectedWinterSportsList.add("Коньки");
         collectedWinterSportsList.add("Лыжи");
+        collectedWinterSportsList.add("Лыжные маски");
         collectedWinterSportsList.add("Санки");
         collectedWinterSportsList.add("Аксессуары для горнолыжного спорта");
         return collectedWinterSportsList;
@@ -235,9 +234,11 @@ public class CatalogsGenerator {
         return collectedHygieneAndCareList;
     }
 
-    @Step("Создан заготовленный список для сравнения подкаталога '{name}'.")
+    @Step("Создан заготовленный список раздела '{name}'.")
     public static List<String> getCollectedListByName(String name) {
         switch (name) {
+            case "Красота и спорт":
+                return CatalogsGenerator.getCollectedBeautyAndSportList();
             case "Велосипеды и самокаты":
                 return CatalogsGenerator.getCollectedBicyclesAndScootersList();
             case "Гироскутеры":

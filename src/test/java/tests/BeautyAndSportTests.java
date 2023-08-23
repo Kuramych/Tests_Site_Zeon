@@ -7,7 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pageObjects.MenuNavigationPage;
 import pageObjects.HomePage;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ import java.util.List;
 
 
 @Listeners(AllureTestNg.class)
-@Feature("Тестирование сайта Zeon.by1")
+@Feature("Тестирование сайта Zeon.by")
 public class BeautyAndSportTests extends TestsBase{
 
     List<String> BeautyAndSportCatalogListFromSite = new ArrayList<>();
@@ -29,20 +28,19 @@ public class BeautyAndSportTests extends TestsBase{
         return BeautyAndSportCatalogListFromSite.iterator();
     }
 
-
     @Test(description = "Проверка раздела 'Красота и спорт' на содержание.")
     public void testBeautyAndSportCatalog() {
-        HomePage.initBeautyAndSport();
-        BeautyAndSportCatalogListFromSite = MenuNavigationPage.getBeautyAndSportCatalog();
-        collectedList = CatalogsGenerator.getCollectedBeautyAndSportList();
+        String catalogName = "Красота и спорт";
+        HomePage.initCatalogFromNavigationPage(catalogName);
+        BeautyAndSportCatalogListFromSite = HomePage.getCatalogListFromSite();
+        collectedList = CatalogsGenerator.getCollectedListByName(catalogName);
         Assert.assertEquals(BeautyAndSportCatalogListFromSite, collectedList);
     }
 
     @Test(dataProvider = "beautyAndSportList", description = "Проверка подкаталога, входящий в раздел 'Красота и спорт' на содержание.")
     public void testBeautyAndSportSubcatalogs(String name) {
-        subcatalogListFromSite = MenuNavigationPage.getbeautyAndSportSubcatalog(name);
+        subcatalogListFromSite = HomePage.getSubcatalogListFromSite(name);
         collectedList = CatalogsGenerator.getCollectedListByName(name);
         Assert.assertEquals(subcatalogListFromSite, collectedList);
     }
-
 }
