@@ -40,7 +40,7 @@ public class BeautyAndSportTests extends TestsBase{
 
     @Test(dataProvider = "beautyAndSportList", description = "Проверка подкаталога, входящий в раздел 'Красота и спорт' на содержание.")
     public void testBeautyAndSportSubcatalogs(String name) {
-        subcatalogListFromSite = MenuNavigationPage.getbeautyAndSportSubcatalog(name.trim());
+        subcatalogListFromSite = MenuNavigationPage.getbeautyAndSportSubcatalog(name);
         collectedList = CatalogsGenerator.getCollectedListByName(name);
         Assert.assertEquals(subcatalogListFromSite, collectedList);
     }

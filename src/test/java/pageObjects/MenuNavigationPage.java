@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Selenide.$$;
 public class MenuNavigationPage {
 
     private static String beautyAndSportCatalogLocator = ".category-item.mobile-modal.opened .menu-item[data-name]";
-    private static String simulatorsAndEquipmentCatalogLocator = ".subcategory-item.mobile-modal[data-name='Тренажеры и инвентарь'] ul.menu-list li.menu-item";
     private static String beautyAndSportSubcatalogLocator = ".subcategory-item.mobile-modal[data-name='%s'] ul.menu-list li.menu-item";
 
 
