@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="56a2a92b-45cd-41be-9d79-cff29f702b27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/generator/CatalogsGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/generator/CatalogsGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/MenuNavigationPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestsBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestsBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +84,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BeautyAndSportTests.test1BeautyAndSportCatalog" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="by" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BeautyAndSportTests" />
+      <option name="METHOD_NAME" value="test1BeautyAndSportCatalog" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BeautyAndSportTests.test2BeautyAndSportSubcatalogs1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="by" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BeautyAndSportTests" />
+      <option name="METHOD_NAME" value="test2BeautyAndSportSubcatalogs1" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BeautyAndSportTests.testBeautyAndSportCatalog" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="by" />
       <extension name="coverage">
@@ -118,48 +156,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BeautyAndSportTests.testSimulatorsAndEquipmentSubcatalog" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="by" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BeautyAndSportTests" />
-      <option name="METHOD_NAME" value="testSimulatorsAndEquipmentSubcatalog" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="by" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TestTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.BeautyAndSportTests" />
+        <item itemvalue="TestNG.BeautyAndSportTests.test2BeautyAndSportSubcatalogs1" />
+        <item itemvalue="TestNG.BeautyAndSportTests.test1BeautyAndSportCatalog" />
         <item itemvalue="TestNG.BeautyAndSportTests.testBeautyAndSportCatalog" />
         <item itemvalue="TestNG.BeautyAndSportTests.testBeautyAndSportSubcatalogs" />
-        <item itemvalue="TestNG.BeautyAndSportTests.testSimulatorsAndEquipmentSubcatalog" />
-        <item itemvalue="TestNG.TestTest" />
       </list>
     </recent_temporary>
   </component>
