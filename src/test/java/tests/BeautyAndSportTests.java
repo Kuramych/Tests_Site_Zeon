@@ -19,23 +19,23 @@ import java.util.List;
 @Feature("Тестирование сайта Zeon.by1")
 public class BeautyAndSportTests extends TestsBase{
 
-    List<String> listBeautyAndSportFromSite = new ArrayList<>();
+    List<String> BeautyAndSportCatalogListFromSite = new ArrayList<>();
     List<String> collectedList = new ArrayList<>();
     List<String> subcatalogListFromSite = new ArrayList<>();
 
 
     @DataProvider(name="beautyAndSportList")
     public Iterator<String> beautyAndSportList1() {
-        return listBeautyAndSportFromSite.iterator();
+        return BeautyAndSportCatalogListFromSite.iterator();
     }
 
 
     @Test(description = "Проверка раздела 'Красота и спорт' на содержание.")
     public void testBeautyAndSportCatalog() {
         HomePage.initBeautyAndSport();
-        listBeautyAndSportFromSite = MenuNavigationPage.getBeautyAndSportCatalog();
+        BeautyAndSportCatalogListFromSite = MenuNavigationPage.getBeautyAndSportCatalog();
         collectedList = CatalogsGenerator.getCollectedBeautyAndSportList();
-        Assert.assertEquals(listBeautyAndSportFromSite, collectedList);
+        Assert.assertEquals(BeautyAndSportCatalogListFromSite, collectedList);
     }
 
     @Test(dataProvider = "beautyAndSportList", description = "Проверка подкаталога, входящий в раздел 'Красота и спорт' на содержание.")
