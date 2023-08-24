@@ -29,7 +29,7 @@ public class MenuPage {
         goToSelectCatalog(catalogName);
     }
 
-    @Step("Получены все разделы заданного каталога.")
+    @Step("Получены все разделы каталога '{catalogName}'.")
     public List<String> getCatalogListFromSite(String catalogName) {
         String CatalogListLocator = String.format(selectedCatalogListLocator, catalogName);
         List<String> catalogNames = $$(CatalogListLocator).texts();

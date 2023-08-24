@@ -44,10 +44,10 @@ public class BeautyAndSportTests extends TestsBase{
     }
 
     @Test(dataProvider = "beautyAndSportList", description = "Проверка подкаталога, входящий в раздел 'Красота и спорт' на содержание.")
-    public void test2BeautyAndSportSubcatalogs(String name) {
+    public void test2BeautyAndSportSubcatalogs(String subcatalogName) {
         MenuPage menuPage = homePage.goToMenuPage();
-        subcatalogListFromSite = menuPage.getSubcatalogListFromSite(name);
-        collectedList = catalogsGenerator.getCollectedListByName(name);
+        subcatalogListFromSite = menuPage.getSubcatalogListFromSite(subcatalogName);
+        collectedList = catalogsGenerator.getCollectedListByName(subcatalogName);
         Assert.assertEquals(subcatalogListFromSite, collectedList);
     }
 }
