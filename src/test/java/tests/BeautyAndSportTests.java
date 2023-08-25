@@ -19,7 +19,7 @@ import java.util.List;
 @Feature("Тестирование раздела 'Красота и спорт' сайта Zeon.by")
 public class BeautyAndSportTests extends TestsBase{
 
-    List<String> BeautyAndSportCatalogListFromSite = new ArrayList<>();
+    List<String> beautyAndSportCatalogListFromSite = new ArrayList<>();
     List<String> collectedList = new ArrayList<>();
     List<String> subcatalogListFromSite = new ArrayList<>();
     String catalogName = "Красота и спорт";
@@ -31,16 +31,16 @@ public class BeautyAndSportTests extends TestsBase{
 
     @DataProvider(name="beautyAndSportList")
     public Iterator<String> beautyAndSportList1() {
-        return BeautyAndSportCatalogListFromSite.iterator();
+        return beautyAndSportCatalogListFromSite.iterator();
     }
 
     @Test(description = "Проверка раздела 'Красота и спорт' на содержание.")
     public void test1BeautyAndSportCatalog() {
         MenuPage menuPage = homePage.goToMenuPage();
         menuPage.initCatalogFromMenuPage(catalogName);
-        BeautyAndSportCatalogListFromSite = menuPage.getCatalogListFromSite(catalogName);
+        beautyAndSportCatalogListFromSite = menuPage.getCatalogListFromSite(catalogName);
         collectedList = catalogsGenerator.getCollectedListByName(catalogName);
-        Assert.assertEquals(BeautyAndSportCatalogListFromSite, collectedList);
+        Assert.assertEquals(beautyAndSportCatalogListFromSite, collectedList, "Заготовленный список и список со страницы сайта не равны.");
     }
 
     @Test(dataProvider = "beautyAndSportList", description = "Проверка подкаталога, входящий в раздел 'Красота и спорт' на содержание.")
@@ -48,6 +48,6 @@ public class BeautyAndSportTests extends TestsBase{
         MenuPage menuPage = homePage.goToMenuPage();
         subcatalogListFromSite = menuPage.getSubcatalogListFromSite(subcatalogName);
         collectedList = catalogsGenerator.getCollectedListByName(subcatalogName);
-        Assert.assertEquals(subcatalogListFromSite, collectedList);
+        Assert.assertEquals(subcatalogListFromSite, collectedList, "Заготовленный список и список со страницы сайта не равны.");
     }
 }

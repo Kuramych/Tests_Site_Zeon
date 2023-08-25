@@ -14,19 +14,15 @@ public class MenuPage {
 
     private String commonCatalogLocator = "//ul[contains(@class, 'menu-list') and contains(@class, 'nav-list')]//li[@data-name='%s']";
     private String selectedCatalogListLocator = ".category-item.mobile-modal[data-name=\"%s\"] .subcategory-item .subcategory-name";
-    private String selectedSubcatalogLocator = ".subcategory-item.mobile-modal[data-name='%s'] ul.menu-list li.menu-item";
+    private String selectedSubcatalogListLocator = ".subcategory-item.mobile-modal[data-name='%s'] ul.menu-list li.menu-item";
+    private String subcatalogLocator = "//a[contains(text(),'%s')]";
 
 
-
-    @Step("Каталог '{catalogName}' открыт.")
-    public void goToSelectCatalog(String catalogName) {
-        String seletedCatalog = String.format(String.valueOf(commonCatalogLocator), catalogName);
-        $(By.xpath(seletedCatalog)).click();
-    }
 
     @Step("Инициализация каталога '{catalogName}'.")
     public void initCatalogFromMenuPage(String catalogName) {
-        goToSelectCatalog(catalogName);
+        String seletedCatalog = String.format(String.valueOf(commonCatalogLocator), catalogName);
+        $(By.xpath(seletedCatalog)).click();
     }
 
     @Step("Получены все разделы каталога '{catalogName}'.")
@@ -38,8 +34,16 @@ public class MenuPage {
 
     @Step("Получено содержание подкаталога '{subcatalogName}'.")
     public List<String> getSubcatalogListFromSite(String subcatalogName) {
-        String subcatalogListLocator = String.format(selectedSubcatalogLocator, subcatalogName);
+        String subcatalogListLocator = String.format(selectedSubcatalogListLocator, subcatalogName);
         List<String> namesFromCatalog = $$(subcatalogListLocator).texts();
         return namesFromCatalog;
     }
+
+    public CablesAdaptersSplittersPage goToCablesAdaptersSplittersSubcatalog(String subcatalogName) {
+        String selectedSubcatalogLocator = String.format(subcatalogLocator, subcatalogName);
+        $(By.xpath(selectedSubcatalogLocator)).click();
+        return new CablesAdaptersSplittersPage();
+    }
+
+
 }
