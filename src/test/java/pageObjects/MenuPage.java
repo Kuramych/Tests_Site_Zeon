@@ -1,11 +1,9 @@
 package pageObjects;
 
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -39,11 +37,10 @@ public class MenuPage {
         return namesFromCatalog;
     }
 
-    public CablesAdaptersSplittersPage goToCablesAdaptersSplittersSubcatalog(String subcatalogName) {
+    @Step("Выполнен вход в подкаталог '{subcatalogName}'.")
+    public ItemsPage goToSubcatalog(String subcatalogName) {
         String selectedSubcatalogLocator = String.format(subcatalogLocator, subcatalogName);
         $(By.xpath(selectedSubcatalogLocator)).click();
-        return new CablesAdaptersSplittersPage();
+        return new ItemsPage();
     }
-
-
 }

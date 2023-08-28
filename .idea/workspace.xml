@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a2a92b-45cd-41be-9d79-cff29f702b27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/AvailabilityAndBrandTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/generator/CatalogsGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/generator/CatalogsGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/BasketPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/CablesAdaptersSplittersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ItemsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/MenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/MenuPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/RegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BasketTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BasketTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CatalogAndSubcatalogsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ElectronicsTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +58,7 @@
       <recent name="pageObjects" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.BasketTests.testBasket">
+  <component name="RunManager" selected="TestNG.CatalogAndSubcatalogsTests">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="AT-site-ZEON.by" />
       <method v="2">
@@ -64,11 +72,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasketTests.testBasket" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AvailabilityAndBrandTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="by" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.AvailabilityAndBrandTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasketTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="by" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BasketTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasketTests.testBasket" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="by" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.CatalogAndSubcatalogsTests" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,7 +124,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BeautyAndSportTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CatalogAndSubcatalogsTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="by" />
       <extension name="coverage">
         <pattern>
@@ -91,7 +133,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BeautyAndSportTests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CatalogAndSubcatalogsTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -99,52 +141,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BeautyAndSportTests.test1BeautyAndSportCatalog" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CatalogAndSubcatalogsTests.test1BeautyAndSportCatalog" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="by" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="tests.CatalogAndSubcatalogsTests" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BeautyAndSportTests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CatalogAndSubcatalogsTests" />
       <option name="METHOD_NAME" value="test1BeautyAndSportCatalog" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ElectronicsTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="by" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ElectronicsTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ElectronicsTests.test1CablesAdaptersSplittersPage" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="by" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ElectronicsTests" />
-      <option name="METHOD_NAME" value="test1CablesAdaptersSplittersPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -154,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CatalogAndSubcatalogsTests" />
+        <item itemvalue="TestNG.BasketTests" />
+        <item itemvalue="TestNG.AvailabilityAndBrandTests" />
+        <item itemvalue="TestNG.CatalogAndSubcatalogsTests.test1BeautyAndSportCatalog" />
         <item itemvalue="TestNG.BasketTests.testBasket" />
-        <item itemvalue="TestNG.ElectronicsTests.test1CablesAdaptersSplittersPage" />
-        <item itemvalue="TestNG.BeautyAndSportTests.test1BeautyAndSportCatalog" />
-        <item itemvalue="TestNG.ElectronicsTests" />
-        <item itemvalue="TestNG.BeautyAndSportTests" />
       </list>
     </recent_temporary>
   </component>
@@ -177,39 +184,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/ElectronicsTests.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/pageObjects/ItemsPage.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/tests/BasketTests.java</url>
           <line>33</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/ElectronicsTests.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/BasketTests.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pageObjects/CablesAdaptersSplittersPage.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/BasketTests.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pageObjects/BasketPage.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="120" />
+          <option name="timeStamp" value="135" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -16,8 +16,8 @@ import java.util.List;
 
 
 @Listeners(AllureTestNg.class)
-@Feature("Тестирование раздела 'Красота и спорт' сайта Zeon.by")
-public class BeautyAndSportTests extends TestsBase{
+@Feature("Тестирование функциональности каталога и подкаталогов сайта Zeon.by")
+public class CatalogAndSubcatalogsTests extends TestsBase{
 
     List<String> beautyAndSportCatalogListFromSite = new ArrayList<>();
     List<String> collectedList = new ArrayList<>();
@@ -35,7 +35,7 @@ public class BeautyAndSportTests extends TestsBase{
     }
 
     @Test(description = "Проверка раздела 'Красота и спорт' на содержание.")
-    public void test1BeautyAndSportCatalog() {
+    public void testCatalogFunctional() {
         MenuPage menuPage = homePage.goToMenuPage();
         menuPage.initCatalogFromMenuPage(catalogName);
         beautyAndSportCatalogListFromSite = menuPage.getCatalogListFromSite(catalogName);
@@ -44,7 +44,7 @@ public class BeautyAndSportTests extends TestsBase{
     }
 
     @Test(dataProvider = "beautyAndSportList", description = "Проверка подкаталога, входящий в раздел 'Красота и спорт' на содержание.")
-    public void test2BeautyAndSportSubcatalogs(String subcatalogName) {
+    public void testSubcatalogsFunctional(String subcatalogName) {
         MenuPage menuPage = homePage.goToMenuPage();
         subcatalogListFromSite = menuPage.getSubcatalogListFromSite(subcatalogName);
         collectedList = catalogsGenerator.getCollectedListByName(subcatalogName);
