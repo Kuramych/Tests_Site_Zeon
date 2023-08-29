@@ -3,7 +3,6 @@ package pageObjects;
 import io.qameta.allure.Step;
 import model.ItemModel;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import property.PropertiesHelper;
 
@@ -42,7 +41,7 @@ public class BasketPage {
     }
 
     @Step("Проверка общей стоимости в 'Корзине'.")
-    public void checkTotalPriceFromBasket(double totalPriceFromItemsPage) {
+    public void checkTotalPrice(double totalPriceFromItemsPage) {
         double modifyTotalPriceFromBasketPage = getModifyPriceFromBasketPage(totalPriceFromBasketPageLocator);
         softAssert.assertEquals(totalPriceFromItemsPage, modifyTotalPriceFromBasketPage,
                 "Проверка на соответствие общей цены в корзине не прошла.");
@@ -50,7 +49,7 @@ public class BasketPage {
     }
 
     @Step("Проверка финальной стоимости в 'Корзине'.")
-    public void checkFinalPriceFromBasket(double totalPriceFromItemsPage) {
+    public void checkFinalPrice(double totalPriceFromItemsPage) {
         double modifyFinalPriceFromBasketPage = getModifyPriceFromBasketPage(finalPriceLocator);
         softAssert.assertEquals(totalPriceFromItemsPage, modifyFinalPriceFromBasketPage,
                 "Проверка на соответствие итоговой цены в корзине не прошла.");
@@ -67,7 +66,7 @@ public class BasketPage {
     }
 
     @Step("Заказ оформлен.")
-    public void dataAfterOrder() {
+    public void fillDataAfterOrder() {
         $(By.xpath(paymentMethod)).click();
         $(By.name("nama")).clear();
         $(By.name("nama")).sendKeys(propertiesHelper.getProperty("personName"));

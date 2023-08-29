@@ -33,16 +33,16 @@ public class BasketTests extends TestsBase {
         itemsPage.setBrandByName(brandName);
 
         List<SelenideElement> itemsList = itemsPage.getCatalogItemsList();
-        List<ItemModel> itemsBasketList = itemsPage.putItemsToBasketPriceWithoutDiscountCard(itemsList, checkPrice, itemsNumber);
+        List<ItemModel> itemsBasketList = itemsPage.putItemsToBasket(itemsList, checkPrice, itemsNumber);
 
         double totalPriceFromItemsPage = itemsPage.getTotalPrice(itemsBasketList);
         BasketPage basketPage = itemsPage.goToBasketPage();
 
         basketPage.checkItemsNamesFromBasket(itemsBasketList);
 
-        basketPage.checkTotalPriceFromBasket(totalPriceFromItemsPage);
-        basketPage.checkFinalPriceFromBasket(totalPriceFromItemsPage);
+        basketPage.checkTotalPrice(totalPriceFromItemsPage);
+        basketPage.checkFinalPrice(totalPriceFromItemsPage);
 
-        basketPage.dataAfterOrder();
+        basketPage.fillDataAfterOrder();
     }
 }

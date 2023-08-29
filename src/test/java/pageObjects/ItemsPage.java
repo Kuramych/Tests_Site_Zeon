@@ -4,7 +4,6 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import model.ItemModel;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +56,7 @@ public class ItemsPage {
     }
 
     @Step("Добавлены {itemsNumber} предмета в 'Корзину', у которых цена меньше {checkPrice} рублей без учеба дисконтной карты.")
-    public List<ItemModel> putItemsToBasketPriceWithoutDiscountCard(List<SelenideElement> itemsList, double checkPrice, int itemsNumber)
+    public List<ItemModel> putItemsToBasket(List<SelenideElement> itemsList, double checkPrice, int itemsNumber)
     {
         List<ItemModel> itemsToBasket = new ArrayList<ItemModel>();
         int itemsToBasketCount = 0;
