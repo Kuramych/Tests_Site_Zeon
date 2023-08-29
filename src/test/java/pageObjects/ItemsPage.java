@@ -45,7 +45,7 @@ public class ItemsPage {
         return $$(By.className("catalog-item"));
     }
 
-    @Step("Проверка, что все выведенные товары имеют плашку 'Есть в наличии' и текст '{brandName}'")
+    @Step("Проверка, что все выведенные товары имеют плашку '{availability}' и текст '{brandName}'")
     public void checkAvailabilityAndBrandName(List<SelenideElement> itemsList, String brandName, String availability) {
         for (SelenideElement item : itemsList) {
             String itemName = item.$(itemNameLocator).text();
