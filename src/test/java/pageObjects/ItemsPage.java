@@ -11,6 +11,9 @@ import java.util.List;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.*;
+import static org.testng.AssertJUnit.assertTrue;
+import org.testng.asserts.SoftAssert;
+
 
 public class ItemsPage {
 
@@ -22,15 +25,17 @@ public class ItemsPage {
     String itemNameLocator = "div.catalog-item-title a";
 
 
+    SoftAssert softAssert = new SoftAssert();
+
 
     @Step("Выбран бренд '{brandName}'.")
-    public void selectBrandByName(String brandName) {
+    public void setBrandByName(String brandName) {
         String selectBrandLocator = String.format(selectBrand, brandName);
         $(By.xpath(selectBrandLocator)).click();
     }
 
     @Step("Выбраны предметы, которые 'В наличии' на данный момент.")
-    public void installAvailabilityFilter() {
+    public void setAvailabilityFilter() {
         $(By.name("inorder")).click();
         $(By.name("inorder")).waitUntil(attribute("checked", "true"), 10000);
     }
@@ -41,17 +46,14 @@ public class ItemsPage {
     }
 
     @Step("Проверка, что все выведенные товары имеют плашку 'Есть в наличии' и текст '{brandName}'")
-    public void checkAvailabilityAndBrandName(List<SelenideElement> itemsList, String brandName) {
-        boolean flag = false;
+    public void checkAvailabilityAndBrandName(List<SelenideElement> itemsList, String brandName, String availability) {
         for (SelenideElement item : itemsList) {
             String itemName = item.$(itemNameLocator).text();
             String itemCheckAvailability = item.$(availabilityLocator).text();
-            if (! itemName.contains(brandName) || (! itemCheckAvailability.contains("Есть в наличии")))  {
-                flag = false;
-            }
-            flag = true;
+            softAssert.assertTrue(itemName.contains(brandName), "Товар " + itemName + " не содержит бренд " + brandName + ".");
+            softAssert.assertTrue(itemCheckAvailability.contains(availability),  "Товар " + itemName + " не содержит текст " + availability + ".");
+            softAssert.assertAll();
         }
-        Assert.assertTrue(flag, "Проверка кнопки 'В наличии' и выбора бренда не прошла.");
     }
 
     @Step("Добавлены {itemsNumber} предмета в 'Корзину', у которых цена меньше {checkPrice} рублей без учеба дисконтной карты.")
@@ -70,7 +72,8 @@ public class ItemsPage {
                 itemsToBasketCount++;
             }
         }
-        Assert.assertEquals(itemsNumber, itemsToBasket.size(), "Недостаточно предметов для 'Корзины'.");
+        softAssert.assertEquals(itemsNumber, itemsToBasket.size(), "Недостаточно предметов для 'Корзины'.");
+        softAssert.assertAll();
         return itemsToBasket;
     }
 

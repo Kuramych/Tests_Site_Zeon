@@ -16,6 +16,8 @@ public class AvailabilityAndBrandTests extends TestsBase{
     String catalogName = "Электроника";
     String subcatalogName = "Кабели, адаптеры, разветвители";
     String brandName = "BASEUS";
+    String brandNameInItemName = "Baseus";
+    String availability = "Есть в наличии";
     HomePage homePage = new HomePage();
 
 
@@ -25,10 +27,10 @@ public class AvailabilityAndBrandTests extends TestsBase{
         menuPage.initCatalogFromMenuPage(catalogName);
         ItemsPage itemsPage = menuPage.goToSubcatalog(subcatalogName);
 
-        itemsPage.installAvailabilityFilter();
-        itemsPage.selectBrandByName(brandName);
+        itemsPage.setAvailabilityFilter();
+        itemsPage.setBrandByName(brandName);
         List<SelenideElement> itemsList = itemsPage.getCatalogItemsList();
 
-        itemsPage.checkAvailabilityAndBrandName(itemsList, brandName);
+        itemsPage.checkAvailabilityAndBrandName(itemsList, brandNameInItemName, availability);
     }
 }

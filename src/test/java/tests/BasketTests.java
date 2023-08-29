@@ -29,8 +29,8 @@ public class BasketTests extends TestsBase {
         menuPage.initCatalogFromMenuPage(catalogName);
         ItemsPage itemsPage = menuPage.goToSubcatalog(subcatalogName);
 
-        itemsPage.installAvailabilityFilter();
-        itemsPage.selectBrandByName(brandName);
+        itemsPage.setAvailabilityFilter();
+        itemsPage.setBrandByName(brandName);
 
         List<SelenideElement> itemsList = itemsPage.getCatalogItemsList();
         List<ItemModel> itemsBasketList = itemsPage.putItemsToBasketPriceWithoutDiscountCard(itemsList, checkPrice, itemsNumber);
