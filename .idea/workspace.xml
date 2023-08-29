@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a2a92b-45cd-41be-9d79-cff29f702b27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/AvailabilityAndBrandTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/generator/CatalogsGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/generator/CatalogsGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/BasketPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/CablesAdaptersSplittersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ItemsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/MenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/MenuPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/RegistrationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/RegistrationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/ItemsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ItemsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AvailabilityAndBrandTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AvailabilityAndBrandTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BasketTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BasketTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BeautyAndSportTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CatalogAndSubcatalogsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ElectronicsTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CatalogAndSubcatalogsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CatalogAndSubcatalogsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +52,7 @@
       <recent name="pageObjects" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CatalogAndSubcatalogsTests">
+  <component name="RunManager" selected="TestNG.AvailabilityAndBrandTests.testAvailabilityAndBrandFunctional">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="AT-site-ZEON.by" />
       <method v="2">
@@ -83,6 +77,24 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.AvailabilityAndBrandTests" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AvailabilityAndBrandTests.testAvailabilityAndBrandFunctional" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="by" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.AvailabilityAndBrandTests" />
+      <option name="METHOD_NAME" value="testAvailabilityAndBrandFunctional" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -141,31 +153,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CatalogAndSubcatalogsTests.test1BeautyAndSportCatalog" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="by" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.CatalogAndSubcatalogsTests" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CatalogAndSubcatalogsTests" />
-      <option name="METHOD_NAME" value="test1BeautyAndSportCatalog" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.AvailabilityAndBrandTests.testAvailabilityAndBrandFunctional" />
+        <item itemvalue="TestNG.BasketTests.testBasket" />
         <item itemvalue="TestNG.CatalogAndSubcatalogsTests" />
         <item itemvalue="TestNG.BasketTests" />
         <item itemvalue="TestNG.AvailabilityAndBrandTests" />
-        <item itemvalue="TestNG.CatalogAndSubcatalogsTests.test1BeautyAndSportCatalog" />
-        <item itemvalue="TestNG.BasketTests.testBasket" />
       </list>
     </recent_temporary>
   </component>
@@ -185,13 +179,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/pageObjects/ItemsPage.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="134" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/tests/BasketTests.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="135" />
+          <line>54</line>
+          <option name="timeStamp" value="145" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

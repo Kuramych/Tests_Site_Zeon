@@ -3,6 +3,7 @@ package pageObjects;
 import io.qameta.allure.Step;
 import model.ItemModel;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import property.PropertiesHelper;
 
 import java.util.ArrayList;
@@ -16,22 +17,14 @@ public class BasketPage {
     PropertiesHelper propertiesHelper = PropertiesHelper.getInstance();
 
     private String itemsNamesLocator = ".cart-item-product-title a";
-    private String totalPriceFromBasketPageLocator = ".total-clubcard-price.summa_car1";
     private String paymentMethod = "//span[text()='Наличными (у меня уже есть Клубная Карта)']";
     private String commentToOrder = "//div[@class='line-field']/textarea[@name='text']";
     private String deliveryMethod = "//span[text()='Самовывоз - бесплатно']";
     private String checkoutButton = ".btn.block.big.cart-submit";
 
-/*
-    public void checkItemsNamesFromBasket(List<String> itemsNames) {
-        List<String> itemsBasketList = $$(itemsNamesLocator).texts();
-        boolean containsAllItems = itemsBasketList.containsAll(itemsNames);
-        if (! containsAllItems){
-            System.out.println("Проверка на соответствие элементов в корзине не прошла.");
-        }
-    }
+    String finalPriceLocator = "div.cart-total-summ span.summary";
+    String totalPriceFromBasketPageLocator = ".total-clubcard-price.summa_car1";
 
- */
 
     @Step("Проверка, что выбранные товары попали в Корзину.")
     public void checkItemsNamesFromBasket(List<ItemModel> itemsFromItemsPage) {
@@ -41,21 +34,30 @@ public class BasketPage {
         }
         List<String> itemsNamesFromBasketPage = $$(itemsNamesLocator).texts();
         boolean containsAllItems = itemsNamesFromBasketPage.containsAll(itemsNamesFromCatalogPage);
-        if (! containsAllItems){
-            System.out.println("Проверка на соответствие элементов в корзине не прошла.");
-        }
+        Assert.assertTrue(containsAllItems, "Проверка на соответствие элементов в корзине не прошла.");
     }
 
-    @Step("Проверка, что общая стоимость товара правильная.")
+    @Step("Проверка общей стоимости в 'Корзине'.")
     public void checkTotalPriceFromBasket(double totalPriceFromItemsPage) {
+        double modifyTotalPriceFromBasketPage = getModifyPriceFromBasketPage(totalPriceFromBasketPageLocator);
+        Assert.assertEquals(totalPriceFromItemsPage, modifyTotalPriceFromBasketPage,
+                "Проверка на соответствие общей цены в корзине не прошла.");
+    }
+
+    @Step("Проверка финальной стоимости в 'Корзине'.")
+    public void checkFinalPriceFromBasket(double totalPriceFromItemsPage) {
+        double modifyFinalPriceFromBasketPage = getModifyPriceFromBasketPage(finalPriceLocator);
+        Assert.assertEquals(totalPriceFromItemsPage, modifyFinalPriceFromBasketPage,
+                "Проверка на соответствие итоговой цены в корзине не прошла.");
+    }
+
+    private double getModifyPriceFromBasketPage(String totalPriceFromBasketPageLocator) {
         String totalPriceFromBasketPage = $(totalPriceFromBasketPageLocator).text();
         String[] parts = totalPriceFromBasketPage.split(" ");
         String rubles = parts[0];
         String kopecks = parts[2];
-        double modifyTotalPriceFromBasketPage = Double.parseDouble(rubles + "." + kopecks);
-        if (totalPriceFromItemsPage != modifyTotalPriceFromBasketPage){
-            System.out.println("Проверка на соответствие общей цены в корзине не прошла.");
-        }
+        double modifyPriceFromBasketPage = Double.parseDouble(rubles + "." + kopecks);
+        return modifyPriceFromBasketPage;
     }
 
     @Step("Заказ оформлен.")

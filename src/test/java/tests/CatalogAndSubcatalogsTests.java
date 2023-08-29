@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @Listeners(AllureTestNg.class)
-@Feature("Тестирование функциональности каталога и подкаталогов сайта Zeon.by")
+@Feature("Проверка работоспособности каталогов и подкаталогов.")
 public class CatalogAndSubcatalogsTests extends TestsBase{
 
     List<String> beautyAndSportCatalogListFromSite = new ArrayList<>();

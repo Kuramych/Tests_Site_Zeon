@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Feature;
 import model.ItemModel;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.BasketPage;
 import pageObjects.ItemsPage;
@@ -11,27 +12,37 @@ import pageObjects.MenuPage;
 
 import java.util.List;
 
-@Feature("Тестирование функциональности 'Корзины' сайта Zeon.by")
+@Feature("Проверка работоспособности 'Корзины'.")
 public class BasketTests extends TestsBase {
 
     HomePage homePage = new HomePage();
     String catalogName = "Электроника";
     String subcatalogName = "Кабели, адаптеры, разветвители";
     String brandName = "BASEUS";
+    double checkPrice = 15.0;
+    int itemsNumber = 2;
+
+
 
     @Test(description = "Тестирование 'Корзины'.")
     private void testBasket() {
         MenuPage menuPage = homePage.goToMenuPage();
         menuPage.initCatalogFromMenuPage(catalogName);
         ItemsPage itemsPage = menuPage.goToSubcatalog(subcatalogName);
-        itemsPage.selectAvailabilityItems();
+        itemsPage.installAvailabilityFilter();
         itemsPage.selectBrandByName(brandName);
-        List<SelenideElement> itemsListFromCablesAdaptersSplittersPage = itemsPage.getCatalogItemsList();
-        List<ItemModel> itemsNamesFromCablesAdaptersSplittersPage = itemsPage.putItemsToBasketPriceWithoutDiscountCard(itemsListFromCablesAdaptersSplittersPage);
-        double totalPriceFromCablesAdaptersSplittersPage = itemsPage.getTotalPrice(itemsNamesFromCablesAdaptersSplittersPage);
+
+        List<SelenideElement> itemsList = itemsPage.getCatalogItemsList();
+        List<ItemModel> itemsBasketList = itemsPage.putItemsToBasketPriceWithoutDiscountCard(itemsList, checkPrice, itemsNumber);
+
+        double totalPriceFromItemsPage = itemsPage.getTotalPrice(itemsBasketList);
         BasketPage basketPage = itemsPage.goToBasketPage();
-        basketPage.checkItemsNamesFromBasket(itemsNamesFromCablesAdaptersSplittersPage);
-        basketPage.checkTotalPriceFromBasket(totalPriceFromCablesAdaptersSplittersPage);
+
+        basketPage.checkItemsNamesFromBasket(itemsBasketList);
+
+        basketPage.checkTotalPriceFromBasket(totalPriceFromItemsPage);
+        basketPage.checkFinalPriceFromBasket(totalPriceFromItemsPage);
+
         basketPage.dataAfterOrder();
     }
 }
