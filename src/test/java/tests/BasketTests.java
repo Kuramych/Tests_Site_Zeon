@@ -3,7 +3,6 @@ package tests;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Feature;
 import model.ItemModel;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.BasketPage;
 import pageObjects.ItemsPage;
@@ -29,6 +28,7 @@ public class BasketTests extends TestsBase {
         MenuPage menuPage = homePage.goToMenuPage();
         menuPage.initCatalogFromMenuPage(catalogName);
         ItemsPage itemsPage = menuPage.goToSubcatalog(subcatalogName);
+
         itemsPage.installAvailabilityFilter();
         itemsPage.selectBrandByName(brandName);
 

@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a2a92b-45cd-41be-9d79-cff29f702b27" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/BasketPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/BasketPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/ItemsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/ItemsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AvailabilityAndBrandTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AvailabilityAndBrandTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BasketTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BasketTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CatalogAndSubcatalogsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CatalogAndSubcatalogsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +47,7 @@
       <recent name="pageObjects" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.AvailabilityAndBrandTests.testAvailabilityAndBrandFunctional">
+  <component name="RunManager" selected="TestNG.CatalogAndSubcatalogsTests">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="AT-site-ZEON.by" />
       <method v="2">
@@ -155,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.AvailabilityAndBrandTests.testAvailabilityAndBrandFunctional" />
-        <item itemvalue="TestNG.BasketTests.testBasket" />
         <item itemvalue="TestNG.CatalogAndSubcatalogsTests" />
         <item itemvalue="TestNG.BasketTests" />
         <item itemvalue="TestNG.AvailabilityAndBrandTests" />
+        <item itemvalue="TestNG.AvailabilityAndBrandTests.testAvailabilityAndBrandFunctional" />
+        <item itemvalue="TestNG.BasketTests.testBasket" />
       </list>
     </recent_temporary>
   </component>
@@ -173,16 +168,5 @@
       <updated>1692530855170</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pageObjects/ItemsPage.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="145" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

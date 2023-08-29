@@ -2,7 +2,6 @@ package tests;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Feature;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.ItemsPage;
 import pageObjects.HomePage;

@@ -8,7 +8,6 @@ import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.*;
@@ -54,26 +53,6 @@ public class ItemsPage {
         }
         Assert.assertTrue(flag, "Проверка кнопки 'В наличии' и выбора бренда не прошла.");
     }
-/*
-    @Step("Добавлены два предмета в 'Корзину', у которых цена меньше 15 рублей без учеба дисконтной карты.")
-    public List<ItemModel> putItemsToBasketPriceWithoutDiscountCard(List<SelenideElement> itemsList) {
-        List<ItemModel> itemsToBasket = new ArrayList<ItemModel>();
-        int itemsToBasketCount = 0;
-        for (SelenideElement item : itemsList) {
-            String itemName = item.$(itemNameLocator).text();
-            String itemPrice = item.$(itemPriceLocator).text();
-            double modifyItemPrice = Double.parseDouble(itemPrice.replaceAll("[^0-9,]", "").replace(",", "."));
-            if (modifyItemPrice <= 15 && itemsToBasketCount < 2){
-                ItemModel itemForBasket =  new ItemModel();
-                itemsToBasket.add(itemForBasket.withName(itemName).withPrice(modifyItemPrice));
-                item.$(addToBasketLocator).click();
-                itemsToBasketCount++;
-            }
-        }
-        return itemsToBasket;
-    }
-
- */
 
     @Step("Добавлены {itemsNumber} предмета в 'Корзину', у которых цена меньше {checkPrice} рублей без учеба дисконтной карты.")
     public List<ItemModel> putItemsToBasketPriceWithoutDiscountCard(List<SelenideElement> itemsList, double checkPrice, int itemsNumber)
