@@ -10,7 +10,6 @@ import java.util.List;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.*;
-import static org.testng.AssertJUnit.assertTrue;
 import org.testng.asserts.SoftAssert;
 
 
@@ -24,7 +23,6 @@ public class ItemsPage {
     String itemNameLocator = "div.catalog-item-title a";
 
 
-    SoftAssert softAssert = new SoftAssert();
 
 
     @Step("Выбран бренд '{brandName}'.")
@@ -46,6 +44,7 @@ public class ItemsPage {
 
     @Step("Проверка, что все выведенные товары имеют плашку '{availability}' и текст '{brandName}'")
     public void checkAvailabilityAndBrandName(List<SelenideElement> itemsList, String brandName, String availability) {
+        SoftAssert softAssert = new SoftAssert();
         for (SelenideElement item : itemsList) {
             String itemName = item.$(itemNameLocator).text();
             String itemCheckAvailability = item.$(availabilityLocator).text();
@@ -58,6 +57,7 @@ public class ItemsPage {
     @Step("Добавлены {itemsNumber} предмета в 'Корзину', у которых цена меньше {checkPrice} рублей без учеба дисконтной карты.")
     public List<ItemModel> putItemsToBasket(List<SelenideElement> itemsList, double checkPrice, int itemsNumber)
     {
+        SoftAssert softAssert = new SoftAssert();
         List<ItemModel> itemsToBasket = new ArrayList<ItemModel>();
         int itemsToBasketCount = 0;
         for (SelenideElement item : itemsList) {

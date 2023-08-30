@@ -25,23 +25,23 @@ public class BasketPage {
     String totalPriceFromBasketPageLocator = ".total-clubcard-price.summa_car1";
 
 
-    SoftAssert softAssert = new SoftAssert();
-
 
     @Step("Проверка, что выбранные товары попали в Корзину.")
     public void checkItemsNamesFromBasket(List<ItemModel> itemsFromItemsPage) {
-        List<String> itemsNamesFromCatalogPage = new ArrayList<String>();
+        SoftAssert softAssert = new SoftAssert();
+        List<String> itemsNamesFromItemsPage = new ArrayList<String>();
         for (ItemModel item :itemsFromItemsPage) {
-            itemsNamesFromCatalogPage.add(item.getName());
+            itemsNamesFromItemsPage.add(item.getName());
         }
         List<String> itemsNamesFromBasketPage = $$(itemsNamesLocator).texts();
-        boolean containsAllItems = itemsNamesFromBasketPage.containsAll(itemsNamesFromCatalogPage);
+        boolean containsAllItems = itemsNamesFromBasketPage.containsAll(itemsNamesFromItemsPage);
         softAssert.assertTrue(containsAllItems, "Проверка на соответствие элементов в корзине не прошла.");
         softAssert.assertAll();
     }
 
     @Step("Проверка общей стоимости в 'Корзине'.")
     public void checkTotalPrice(double totalPriceFromItemsPage) {
+        SoftAssert softAssert = new SoftAssert();
         double modifyTotalPriceFromBasketPage = getModifyPriceFromBasketPage(totalPriceFromBasketPageLocator);
         softAssert.assertEquals(totalPriceFromItemsPage, modifyTotalPriceFromBasketPage,
                 "Проверка на соответствие общей цены в корзине не прошла.");
@@ -50,6 +50,7 @@ public class BasketPage {
 
     @Step("Проверка финальной стоимости в 'Корзине'.")
     public void checkFinalPrice(double totalPriceFromItemsPage) {
+        SoftAssert softAssert = new SoftAssert();
         double modifyFinalPriceFromBasketPage = getModifyPriceFromBasketPage(finalPriceLocator);
         softAssert.assertEquals(totalPriceFromItemsPage, modifyFinalPriceFromBasketPage,
                 "Проверка на соответствие итоговой цены в корзине не прошла.");
@@ -60,8 +61,8 @@ public class BasketPage {
         String totalPriceFromBasketPage = $(totalPriceFromBasketPageLocator).text();
         String[] parts = totalPriceFromBasketPage.split(" ");
         String rubles = parts[0];
-        String kopecks = parts[2];
-        double modifyPriceFromBasketPage = Double.parseDouble(rubles + "." + kopecks);
+        String pennies = parts[2];
+        double modifyPriceFromBasketPage = Double.parseDouble(rubles + "." + pennies);
         return modifyPriceFromBasketPage;
     }
 
