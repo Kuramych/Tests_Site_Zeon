@@ -7,7 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pageObjects.HomePage;
 import pageObjects.MenuPage;
 
@@ -36,22 +35,18 @@ public class CatalogAndSubcatalogsTests extends TestsBase{
 
     @Test(description = "Проверка раздела 'Красота и спорт' на содержание.")
     public void testCatalogFunctional() {
-        SoftAssert softAssert = new SoftAssert();
         MenuPage menuPage = homePage.goToMenuPage();
         menuPage.initCatalogFromMenuPage(catalogName);
         beautyAndSportCatalogListFromSite = menuPage.getCatalogListFromSite(catalogName);
         collectedList = catalogsGenerator.getCollectedListByName(catalogName);
-        softAssert.assertEquals(beautyAndSportCatalogListFromSite, collectedList, "Заготовленный список и список со страницы сайта не равны.");
-        softAssert.assertAll();
+        Assert.assertEquals(beautyAndSportCatalogListFromSite, collectedList, "Заготовленный список и список со страницы сайта не равны.");
     }
 
     @Test(dataProvider = "beautyAndSportList", description = "Проверка подкаталога, входящий в раздел 'Красота и спорт' на содержание.")
     public void testSubcatalogsFunctional(String subcatalogName) {
-        SoftAssert softAssert = new SoftAssert();
         MenuPage menuPage = homePage.goToMenuPage();
         subcatalogListFromSite = menuPage.getSubcatalogListFromSite(subcatalogName);
         collectedList = catalogsGenerator.getCollectedListByName(subcatalogName);
-        softAssert.assertEquals(subcatalogListFromSite, collectedList, "Заготовленный список и список со страницы сайта не равны.");
-        softAssert.assertAll();
+        Assert.assertEquals(subcatalogListFromSite, collectedList, "Заготовленный список и список со страницы сайта не равны.");
     }
 }

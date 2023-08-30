@@ -3,7 +3,7 @@ package pageObjects;
 import io.qameta.allure.Step;
 import model.ItemModel;
 import org.openqa.selenium.By;
-import org.testng.asserts.SoftAssert;
+import org.testng.Assert;
 import property.PropertiesHelper;
 
 import java.util.ArrayList;
@@ -20,41 +20,35 @@ public class BasketPage {
     private String paymentMethod = "//span[text()='Наличными (у меня уже есть Клубная Карта)']";
     private String commentToOrder = "//div[@class='line-field']/textarea[@name='text']";
     private String deliveryMethod = "//span[text()='Самовывоз - бесплатно']";
-    private String checkoutButton = ".btn.block.big.cart-submit";
-    String finalPriceLocator = "div.cart-total-summ span.summary";
-    String totalPriceFromBasketPageLocator = ".total-clubcard-price.summa_car1";
+    private String checkoutButton = "button.btn.block.big.cart-submit";
+    private String finalPriceLocator = "div.cart-total-summ span.summary";
+    private String totalPriceFromBasketPageLocator = ".total-clubcard-price.summa_car1";
 
 
 
     @Step("Проверка, что выбранные товары попали в Корзину.")
     public void checkItemsNamesFromBasket(List<ItemModel> itemsFromItemsPage) {
-        SoftAssert softAssert = new SoftAssert();
         List<String> itemsNamesFromItemsPage = new ArrayList<String>();
         for (ItemModel item :itemsFromItemsPage) {
             itemsNamesFromItemsPage.add(item.getName());
         }
         List<String> itemsNamesFromBasketPage = $$(itemsNamesLocator).texts();
         boolean containsAllItems = itemsNamesFromBasketPage.containsAll(itemsNamesFromItemsPage);
-        softAssert.assertTrue(containsAllItems, "Проверка на соответствие элементов в корзине не прошла.");
-        softAssert.assertAll();
+        Assert.assertTrue(containsAllItems, "Проверка на соответствие элементов в корзине не прошла.");
     }
 
     @Step("Проверка общей стоимости в 'Корзине'.")
     public void checkTotalPrice(double totalPriceFromItemsPage) {
-        SoftAssert softAssert = new SoftAssert();
         double modifyTotalPriceFromBasketPage = getModifyPriceFromBasketPage(totalPriceFromBasketPageLocator);
-        softAssert.assertEquals(totalPriceFromItemsPage, modifyTotalPriceFromBasketPage,
+        Assert.assertEquals(totalPriceFromItemsPage, modifyTotalPriceFromBasketPage,
                 "Проверка на соответствие общей цены в корзине не прошла.");
-        softAssert.assertAll();
     }
 
     @Step("Проверка финальной стоимости в 'Корзине'.")
     public void checkFinalPrice(double totalPriceFromItemsPage) {
-        SoftAssert softAssert = new SoftAssert();
         double modifyFinalPriceFromBasketPage = getModifyPriceFromBasketPage(finalPriceLocator);
-        softAssert.assertEquals(totalPriceFromItemsPage, modifyFinalPriceFromBasketPage,
+        Assert.assertEquals(totalPriceFromItemsPage, modifyFinalPriceFromBasketPage,
                 "Проверка на соответствие итоговой цены в корзине не прошла.");
-        softAssert.assertAll();
     }
 
     private double getModifyPriceFromBasketPage(String totalPriceFromBasketPageLocator) {
@@ -78,6 +72,6 @@ public class BasketPage {
         $(By.xpath(commentToOrder)).clear();
         $(By.xpath(commentToOrder)).sendKeys(propertiesHelper.getProperty("personComment"));
         $(By.xpath(deliveryMethod)).click();
-        //$(By.xpath(checkoutButton)).click();
+        $(By.cssSelector(checkoutButton)).click();
     }
 }

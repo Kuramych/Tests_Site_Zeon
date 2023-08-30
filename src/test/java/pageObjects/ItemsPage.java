@@ -10,6 +10,8 @@ import java.util.List;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Selenide.*;
+
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 
@@ -57,7 +59,6 @@ public class ItemsPage {
     @Step("Добавлены {itemsNumber} предмета в 'Корзину', у которых цена меньше {checkPrice} рублей без учеба дисконтной карты.")
     public List<ItemModel> putItemsToBasket(List<SelenideElement> itemsList, double checkPrice, int itemsNumber)
     {
-        SoftAssert softAssert = new SoftAssert();
         List<ItemModel> itemsToBasket = new ArrayList<ItemModel>();
         int itemsToBasketCount = 0;
         for (SelenideElement item : itemsList) {
@@ -71,8 +72,7 @@ public class ItemsPage {
                 itemsToBasketCount++;
             }
         }
-        softAssert.assertEquals(itemsNumber, itemsToBasket.size(), "Недостаточно предметов для 'Корзины'.");
-        softAssert.assertAll();
+        Assert.assertEquals(itemsNumber, itemsToBasket.size(), "Недостаточно предметов для 'Корзины'.");
         return itemsToBasket;
     }
 
@@ -88,7 +88,7 @@ public class ItemsPage {
 
     @Step("Выполнен переход в 'Корзину'.")
     public BasketPage goToBasketPage() {
-        $(new By.ById("basketCnt")).click();
+        $(By.id("basketCnt")).click();
         return new BasketPage();
     }
 }

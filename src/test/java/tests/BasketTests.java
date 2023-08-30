@@ -23,8 +23,8 @@ public class BasketTests extends TestsBase {
 
 
 
-    @Test(description = "Тестирование 'Корзины'.")
-    private void testBasket() {
+    @Test(description = "Тестирование добавления предметов в 'Корзину' и подсчета финальной суммы.")
+    public void testBasket() {
         MenuPage menuPage = homePage.goToMenuPage();
         menuPage.initCatalogFromMenuPage(catalogName);
         ItemsPage itemsPage = menuPage.goToSubcatalog(subcatalogName);
