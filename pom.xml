@@ -28,10 +28,11 @@
       <artifactId>allure-testng</artifactId>
       <version>${allure-testng.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide</artifactId>
-      <version>5.1.0</version>
+      <version>6.17.2</version>
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>

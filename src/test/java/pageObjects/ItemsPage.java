@@ -36,7 +36,8 @@ public class ItemsPage {
     @Step("Выбраны предметы, которые 'В наличии' на данный момент.")
     public void setAvailabilityFilter() {
         $(By.name("inorder")).click();
-        $(By.name("inorder")).waitUntil(attribute("checked", "true"), 10000);
+        //$(By.name("inorder")).waitUntil(attribute("checked", "true"), 10000);
+        $(By.name("inorder")).shouldBe(attribute("checked", "true"));
     }
 
     @Step("Получен актуальный список товаров.")
@@ -83,7 +84,7 @@ public class ItemsPage {
             double itemPrice = item.getPrice();
             totalItemsPrice += itemPrice;
         }
-        return totalItemsPrice;
+        return Math.round(totalItemsPrice * 10) / 10.0;
     }
 
     @Step("Выполнен переход в 'Корзину'.")

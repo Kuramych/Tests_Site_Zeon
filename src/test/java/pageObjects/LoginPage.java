@@ -5,6 +5,8 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
@@ -18,13 +20,13 @@ public class LoginPage {
 
     @Step("Ввод username: {username}")
     private void typeUsername(String username) {
-        usernameLocator.waitUntil(Condition.visible, 5000).clear();
+        usernameLocator.shouldBe(exist);
         usernameLocator.sendKeys(username);
     }
 
     @Step("Ввод password: {password}")
     private void typePassword(String password) {
-        passwordLocator.waitUntil(Condition.visible, 5000).clear();
+        passwordLocator.shouldBe(exist);
         passwordLocator.sendKeys(password);
     }
 

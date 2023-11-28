@@ -41,7 +41,6 @@ public class BasketTests extends TestsBase {
         basketPage.checkItemsNamesFromBasket(basketItems);
         basketPage.checkTotalPrice(totalPriceFromItemsPage);
         basketPage.checkFinalPrice(totalPriceFromItemsPage);
-
         basketPage.fillDataAfterOrder();
     }
 }

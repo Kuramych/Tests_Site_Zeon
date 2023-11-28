@@ -7,8 +7,7 @@ import org.testng.annotations.BeforeClass;
 import pageObjects.LoginPage;
 import property.PropertiesHelper;
 
-import static com.codeborne.selenide.Selenide.close;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestsBase {
 
@@ -17,13 +16,13 @@ public class TestsBase {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() {
-        Configuration.startMaximized=true;
-        open(propertiesHelper.getProperty("zeonUrl"));
+        Configuration.baseUrl = propertiesHelper.getProperty("zeonUrl");
+        open("");
         loginPage.login(propertiesHelper.getProperty("username"), propertiesHelper.getProperty("password"));
     }
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        close();
+        closeWindow();
     }
 }
