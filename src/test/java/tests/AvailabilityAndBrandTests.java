@@ -9,6 +9,8 @@ import pageObjects.MenuPage;
 
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 
 @Feature("Функциональности кнопки 'В наличии' и выбора бренда.")
 public class AvailabilityAndBrandTests extends TestsBase{
@@ -22,13 +24,14 @@ public class AvailabilityAndBrandTests extends TestsBase{
 
 
     @Test(description = "Проверка работоспособности кнопки 'В наличии' и выбора бренда.")
-    public void testAvailabilityAndBrandFunctional() {
+    public void testAvailabilityAndBrandFunctional() throws InterruptedException {
         MenuPage menuPage = homePage.goToMenuPage();
         menuPage.initCatalogFromMenuPage(catalogName);
         ItemsPage itemsPage = menuPage.goToSubcatalog(subcatalogName);
 
         itemsPage.setAvailabilityFilter();
         itemsPage.setBrandByName(brandName);
+        sleep(1000);
         List<SelenideElement> itemsList = itemsPage.getCatalogItemsList();
 
         itemsPage.checkAvailabilityAndBrandName(itemsList, brandNameInItemName, availability);

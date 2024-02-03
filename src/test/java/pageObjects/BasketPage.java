@@ -16,13 +16,13 @@ public class BasketPage {
 
     PropertiesHelper propertiesHelper = PropertiesHelper.getInstance();
 
-    private String itemsNamesLocator = ".cart-item-product-title a";
-    private String paymentMethod = "//span[text()='Наличными (у меня уже есть Клубная Карта)']";
-    private String commentToOrder = "//div[@class='line-field']/textarea[@name='text']";
-    private String deliveryMethod = "//span[text()='Самовывоз - бесплатно']";
-    private String checkoutButton = "button.btn.block.big.cart-submit";
-    private String finalPriceLocator = "div.cart-total-summ span.summary";
-    private String totalPriceFromBasketPageLocator = ".total-clubcard-price.summa_car1";
+    private final String itemsNamesLocator = ".cart-item-product-title a";
+    private final String paymentMethod = "//span[text()='Наличными (у меня уже есть Клубная Карта)']";
+    private final String commentToOrder = "//div[@class='line-field']/textarea[@name='text']";
+    private final String deliveryMethod = "//span[text()='Самовывоз - бесплатно']";
+    private final String checkoutButton = "button.btn.block.big.cart-submit";
+    private final String finalPriceLocator = "div.cart-total-summ span.summary";
+    private final String totalPriceFromBasketPageLocator = ".total-clubcard-price.summa_car1";
 
 
 

@@ -11,6 +11,8 @@ import pageObjects.MenuPage;
 
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 @Feature("Проверка работоспособности 'Корзины'.")
 public class BasketTests extends TestsBase {
 
@@ -18,13 +20,13 @@ public class BasketTests extends TestsBase {
     String catalogName = "Электроника";
     String subcatalogName = "Кабели, адаптеры, разветвители";
     String brandName = "BASEUS";
-    double checkPrice = 15.0;
+    double checkPrice = 20.0;
     int itemsNumber = 2;
 
 
 
     @Test(description = "Тестирование добавления предметов в 'Корзину' и подсчета финальной суммы.")
-    public void testBasket() {
+    public void testBasket() throws InterruptedException {
         MenuPage menuPage = homePage.goToMenuPage();
         menuPage.initCatalogFromMenuPage(catalogName);
         ItemsPage itemsPage = menuPage.goToSubcatalog(subcatalogName);
@@ -33,6 +35,7 @@ public class BasketTests extends TestsBase {
         itemsPage.setBrandByName(brandName);
 
         List<SelenideElement> itemsList = itemsPage.getCatalogItemsList();
+        sleep(1000);
         List<ItemModel> basketItems = itemsPage.putItemsToBasket(itemsList, checkPrice, itemsNumber);
 
         double totalPriceFromItemsPage = itemsPage.getTotalPrice(basketItems);
